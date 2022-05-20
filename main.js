@@ -28,7 +28,10 @@ const servers = {
 
 
 const constraints = {
-    video: true,
+    video: {
+        width: { min: 640, ideal: 1920, max: 1920 }, 
+        height: { min: 480, ideal: 1080, max: 1080 }, 
+    },
     audio: true
 }
 
@@ -165,7 +168,6 @@ const toggleMic = async () => {
         .getTracks()
         .find(track => track.kind === 'audio')
 
-    console.log(audioTrack)
     if (audioTrack.enabled) {
         audioTrack.enabled = false
         document.getElementById('mic-btn').style.backgroundColor = 'rgb(255, 80, 80)'
