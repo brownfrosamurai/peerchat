@@ -28,7 +28,7 @@ const servers = {
 
 
 const constraints = {
-    video: true
+    video: true,
     audio: true
 }
 
