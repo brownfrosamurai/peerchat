@@ -32,7 +32,7 @@ const constraints = {
         width: { min: 640, ideal: 1920, max: 1920 }, 
         height: { min: 480, ideal: 1080, max: 1080 }, 
     },
-    audio: false
+    audio: true
 }
 
 // Initialize video chat 
@@ -80,7 +80,7 @@ const handleUserJoined = async (MemberId) => {
 }
 
 // Handle user leaving 
-const handleUserLeft = async (MemberId) => {
+const handleUserLeft = async () => {
     document.getElementById('user-2').style.display = 'none'
     document.getElementById('user-2').classList.remove('smallFrame')
 }
@@ -181,6 +181,7 @@ const toggleMic = async () => {
 window.addEventListener('beforeunload', leaveChannel)
 
 document.getElementById('camera-btn').addEventListener('click', toggleCamera)
+
 document.getElementById('mic-btn').addEventListener('click', toggleMic)
 
 init()
